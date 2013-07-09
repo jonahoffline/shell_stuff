@@ -4,10 +4,12 @@ A growing collection of dotfiles and shell scripts I've developed over time to m
 
 ## Script list
   * **sprunge** - sends your shell output to http://sprunge.us and generates a link
-  ```console
-  $ tree . | sprunge
-  http://sprunge.us/jeVL
-  ```
+
+```console
+$ tree . | sprunge
+http://sprunge.us/jeVL
+```
+
   * **redisd**  - starts your Redis Server instance with configuration file
   * **shrinkpdf** - Shrinks a pdf file (uses ghostscript)
   * **belkinNrouter-pass-enum** - Gets the admin password for Belkin N Routers
