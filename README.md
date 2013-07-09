@@ -7,9 +7,10 @@ A growing collection of dotfiles and shell scripts I've developed over time to m
 
 ```console
 $ tree . | sprunge
-http://sprunge.us/jeVL
+http://sprunge.us/hOEQ
 ```
 
+  * **jsc** - executes the JavaScript Core Console hidden deep in OS X
   * **redisd**  - starts your Redis Server instance with configuration file
   * **shrinkpdf** - Shrinks a pdf file (uses ghostscript)
   * **belkinNrouter-pass-enum** - Gets the admin password for Belkin N Routers
