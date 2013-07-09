@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Only works under OS X
+/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc $1
