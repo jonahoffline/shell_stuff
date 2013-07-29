@@ -3,7 +3,7 @@
 	email = jonah@pixelhipsters.com
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = mate -wl1
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -19,6 +19,7 @@
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
-	dump = cat-file -p
+  dump = cat-file -p
+  plog = log --oneline --graph --decorate
 [mergetool]
 	keepBackup = true
