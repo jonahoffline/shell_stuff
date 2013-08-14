@@ -25,14 +25,6 @@ module FlushDNS
     (get_os_version.to_f >= 10.7) ? Recent.flush_dns : Ancient.flush_dns
   end
 
-  def pre_msg
-    puts 'Enter your root password'
-  end
-
-  def post_msg
-    puts 'Flushed DNS!'
-  end
-
   module Recent
     def self.flush_dns
       MsgCallbacks.new { `sudo killall -HUP mDNSResponder` }
