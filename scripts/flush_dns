@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+# Description:
+#   Flushes DNS Cache for OS X
+#
+# Author:
+#   jonahoffline (Jonah Ruiz) <jonah@pixelhipsters.com>
+#
+# Github:
+#   https://github.com/jonahoffline/shell_stuff
+
+module FlushDNS
+  module_function
+
+  def system_info
+    `sw_vers`
+  end
+
+  def get_os_version
+    result = system_info.gsub(/\s+/, '').strip
+    result[/(10.\d+.\d+)/]
+  end
+
+  def clear_cache
+    (get_os_version.to_f >= 10.7) ? Recent.flush_dns : Ancient.flush_dns
+  end
+
+  def pre_msg
+    puts 'Enter your root password'
+  end
+
+  def post_msg
+    puts 'Flushed DNS!'
+  end
+
+  module Recent
+    def self.flush_dns
+      MsgCallbacks.new { `sudo killall -HUP mDNSResponder` }
+    end
+  end
+
+  module Ancient
+    def self.flush_dns
+      MsgCallbacks.new { `sudo dscacheutil -flushcache` }
+    end
+  end
+
+  class MsgCallbacks
+    def initialize(&block)
+      pre_msg
+      yield
+      post_msg
+    end
+
+    def pre_msg
+      puts 'Enter your root password'
+    end
+
+    def post_msg
+      puts 'Flushed DNS!'
+    end
+  end
+
+end
+
+FlushDNS.clear_cache
+
