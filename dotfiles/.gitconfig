@@ -25,3 +25,5 @@
   empujate-este = push
 [mergetool]
 	keepBackup = true
+[push]
+	default = simple
