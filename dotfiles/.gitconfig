@@ -3,7 +3,7 @@
 	email = jonah@pixelhipsters.com
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim2
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -23,7 +23,9 @@
   plog = log --oneline --graph --decorate
   shipit = push heroku master
   empujate-este = push
+  mergers = !git log --pretty=format:"%Cred%aN%Creset" --merges | sort | uniq -c | sort -rn
+  hugs = !git log --pretty=format:"%Cblue%aN%Creset" --no-merges | sort | uniq -c | sort -rn
 [mergetool]
 	keepBackup = true
 [push]
-	default = simple
+  default = simple
