@@ -12,6 +12,7 @@ http://sprunge.us/hOEQ
 
   * **flush_dns** - Flushes DNS Cache in OS X (works on 10.4 to 10.9)
   * **jsc** - executes the JavaScript Core Console hidden deep in OS X
+  * **word_search** - search for words in OS X dictionary file.
   * **redisd**  - starts your Redis Server instance with configuration file
   * **shrinkpdf** - Shrinks a pdf file (uses ghostscript)
   * **belkinNrouter-pass-enum** - Gets the admin password for Belkin N Routers
