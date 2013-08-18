@@ -1,3 +1,13 @@
 #!/usr/bin/env sh
 
-grep "$1" /usr/share/dict/words
+# Description:
+#   Search for a word in OS X
+#
+# Author:
+#   jonahoffline (Jonah Ruiz) <jonah@pixelhipsters.com>
+#
+# Github:
+#   https://github.com/jonahoffline/shell_stuff
+
+grep --color -i "$1" /usr/share/dict/words
+
