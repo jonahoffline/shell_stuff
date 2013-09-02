@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+#
+# Description:
+#   Send SMS by e-mail.
+#
+# Author:
+#   jonahoffline (Jonah Ruiz) <jonah@pixelhipsters.com>
+#
+# Github:
+#   https://github.com/jonahoffline/shell_stuff
+
+require 'mail'
+
+module SpamBitch
+  module Phone
+    def self.carriers
+      { claro: 'vtexto.com', att: 'txt.att.net', tmobile: 'sms.tmobile.net' }
+    end
+
+    def self.send_sms(telephone, msg, carrier)
+      options = {
+        :address        => 'smtp.gmail.com',
+        :port           => 587,
+        :domain         => 'gmail.com',
+        :authentication => 'plain',
+        :user_name      => ENV['EMAIL'],
+        :password       => ENV['PASSWORD'],
+        :enable_starttls_auto => true
+      }
+
+      Mail.defaults do
+        delivery_method :smtp, options
+      end
+
+      mail = Mail.new do
+        from     "#{ENV['EMAIL']}"
+        to        "#{telephone}@#{SpamBitch::Phone.carriers[carrier]}"
+        subject  'SMS from SpamBitch'
+        body     " #{msg}"
+      end
+      mail.deliver!
+    end
+
+    def self.sms(carrier='')
+      gateway = carrier.empty? ? carriers[random_carrier] : carriers[carrier]
+      "#{telephone.gsub(/-/, '')}@#{gateway}"
+    end
+  end
+end
+
+telephone, msg, carrier = ARGV
+SpamBitch::Phone.send_sms(telephone, msg, carrier) unless (telephone.nil? && msg.nil?)
