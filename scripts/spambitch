@@ -46,7 +46,32 @@ module SpamBitch
       "#{telephone.gsub(/-/, '')}@#{gateway}"
     end
   end
+
+  class CLI
+    def self.run
+      klass = self.new
+      klass.capture_input
+      SpamBitch::Phone.send_sms(klass.telephone, klass.msg, klass.carrier.intern) if klass.valid?
+    end
+
+    def valid?
+      !(self.telephone.nil? && self.msg.nil?)
+    end
+
+    def self.attributes
+      %i(telephone msg carrier)
+    end
+
+    def capture_input
+      SpamBitch::CLI.class_eval do
+        attributes.map.with_index do |method_name, index|
+          define_method method_name do
+            ARGV[index]
+          end
+        end
+      end
+    end
+  end
 end
 
-telephone, msg, carrier = ARGV
-SpamBitch::Phone.send_sms(telephone, msg, carrier) unless (telephone.nil? && msg.nil?)
+SpamBitch::CLI.run
