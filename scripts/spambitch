@@ -63,7 +63,7 @@ module SpamBitch
     end
 
     def capture_input
-      SpamBitch::CLI.class_eval do
+      self.class.class_eval do
         attributes.map.with_index do |method_name, index|
           define_method method_name do
             ARGV[index]
