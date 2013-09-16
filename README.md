@@ -37,3 +37,6 @@ http://sprunge.us/hOEQ
 
 ## Author
   * [Jonah Ruiz](http://www.pixelhipsters.com)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jonahoffline/shell_stuff/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
