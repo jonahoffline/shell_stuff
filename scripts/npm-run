@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+#
+# Description:
+#   Allows you to run bin files for locally installed npm packages.
+#
+# Author:
+#   jonahoffline (Jonah Ruiz) <jonah@pixelhipsters.com>
+#
+# Github:
+#   https://github.com/jonahoffline/shell_stuff
+
+./node_modules/.bin/$@
+
