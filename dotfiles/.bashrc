@@ -5,7 +5,7 @@ alias ls="ls -G"
 alias pry="pry --simple-prompt"
 alias pry-dev="pry -r ./config/environment"
 alias vim=/usr/local/Cellar/macvim/7.3-66/MacVim.app/Contents/MacOS/Vim
-
+alias git=hub
 #export PATH=$PATH:/usr/local/rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
