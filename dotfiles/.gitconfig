@@ -3,7 +3,7 @@
 	email = jonah@pixelhipsters.com
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim
+	editor = /usr/local/Cellar/macvim/7.3-66/MacVim.app/Contents/MacOS/Vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
