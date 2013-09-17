@@ -13,7 +13,7 @@ http://sprunge.us/hOEQ
   * **flush_dns** - Flushes DNS Cache in OS X (works on 10.4 to 10.9)
   * **jsc** - executes the JavaScript Core Console hidden deep in OS X
   * **word_search** - search for words in OS X dictionary file.
-  * **spambich** - Send SMS by e-mail. Spam all your friends :)
+  * **spambitch** - Send SMS by e-mail. Spam all your friends :)
   * **npm-run** - Run bin files for locally installed npm packages
   * **redisd**  - starts your Redis Server instance with configuration file
   * **shrinkpdf** - Shrinks a pdf file (uses ghostscript)
